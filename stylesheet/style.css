@@ -1,17 +1,48 @@
 /* type selector */
-h2{
+/* h2{
     color: purple;
-}
+} */
 
 /* ID selector */
-#welcome {
+/* #welcome {
     color: red;
-}
+} */
 
 /* Class Selector */
-.movie {
+/* .movie {
     color: blue;;
 }
 .red {
     color: red;
+} */
+
+/* -------------------------------------------- */
+/*pesdo-class selector (가상 클래스 선택자)
+    더 디테일하고(범위를 좁히고) 세세하게 설정하는 선택자 */
+
+/* 1. first - child 
+    먼저 li 묶음 찾은 후 그 중 첫번째 자식을 찾는다.*/
+li:first-child {
+    color: green;
 }
+
+.movie:first-child{
+    font-size: 30px;
+}
+
+/* 2. last-child */
+span:last-child{
+    color: gold;
+}
+
+/*3. nth-child() 
+    자식을 선택할수 있음 ()에 숫자를 넣으면된다. 특정 매개변수를 활용하여 함수로 사용가능*/
+li:nth-child(3){
+    color: pink;
+}
+
+li:nth-child(2n) {
+    color: hotpink;
+}
+
+/* even odd 요소도 넣을 수 있다 */
