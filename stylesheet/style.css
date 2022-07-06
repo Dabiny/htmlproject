@@ -1,0 +1,17 @@
+/* type selector */
+h2{
+    color: purple;
+}
+
+/* ID selector */
+#welcome {
+    color: red;
+}
+
+/* Class Selector */
+.movie {
+    color: blue;;
+}
+.red {
+    color: red;
+}

@@ -1,0 +1,35 @@
+/* Attribute selector (속성 선택자)*/
+
+/* 1. [attr] [안에 있는 요소를 가지고 있는 애들만 변경됨]*/
+a[target]{
+    color: hotpink;
+}
+
+/* 2. [attr=value] 요소를 갖고있는 애들 중에서도 
+특정 애만 유일하게 바꾸고싶은 경우*/
+a[href="http://example.org"]{
+    color: indigo;
+}
+
+input[type="submit"]{
+    background-color: greenyellow;
+}
+
+/*3. [attr^=value] 캐럿기호 특정문자열을 시작하는애들을 고르는것
+    뜻: a속성애들 중에서 href를 속성을 가진애들 중에서 그 값이 http인 애들만 골라줘*/
+a[href^="http://"]{
+    color: red;
+    font-style: italic;
+}
+
+/*4. [attr$=value] 달러사인 그 문자열로 끝나는 애들을 찾께된다.*/
+a[href$=".com"]{
+    color: silver;
+}
+
+/* 속성 선택자가 모두 참인 아이들은 참인 모든 스타일링을 가지게된다 */
+
+/*5. [attr*=value] value 문자열 중간에 있는 값이 있다면 전부 적용을 한다.*/
+a[href*="example"]{
+    color: sienna;
+}
