@@ -1,0 +1,33 @@
+/*pseudo-class selector (가상클래스 선택자) 
+    first-child vs first-of-type */
+/* 대부분 first of type를 쓰긴한다. 상황에 따라서 쓰기*/
+/* 1. :first-of-type 타입들 중에 첫번째 자식
+    p를 찾고 p자식들을 보고 그중에서 첫번째*/
+p:first-child {
+    color: red;
+}
+.movie:first-of-type{
+    color: aqua;
+}
+/* 보통 .movie 라고 한다면 toystory가 첫번째니까 토이스토리만 색이 변하겠지 하지만
+    주토피아랑 같이 아쿠아색으로 바뀐다. 타입형태는 타입의 첫번째를
+    고른다. 그래서 이런경우를 child를 쓸지 타입을쓸지 선택 */
+
+p:first-of-type{
+    color: pink;
+}
+/* 2. :last-of-type */
+p:last-child {
+    color: blue;
+}
+
+ 
+
+p:last-of-type{
+    color: purple;
+}
+
+/* 3. :nth-of-type() */
+p:nth-of-type(even){
+    color: blue;
+}

@@ -1,0 +1,94 @@
+/* pseudo-element Selector (가상 요소 선택자)
+    selector::____ == selector:___ 
+    실제로 존재하지않는 요소를 정해서 꾸미거나, 구획을 정해서 요소를 준다
+    css로 만들어낸 가상의 요소는 드래그,선택되지 않음. 
+    가상의요소이기때문에 꾸밈을위한 요소라고 생각한다.
+*/
+
+/* before, after */
+
+.favorite:before {
+    content: '🥹';
+    color: indianred;
+} 
+
+.favorite::after {
+    content: '🥹'
+    
+}
+
+/* 1frist-letter, 2first-line, 3selection 
+   1. 첫번째 글짜만 적용됨 비포를 적용하면 비포에 적용이됨
+   2. 첫번째 줄에만 스타일링됨 해상도가줄어도 첫번째!줄만 적영됨
+   3. 드래그 선택영역에대한 스타일링 */
+
+.lorem::before {
+    content:'before';
+    
+}
+.lorem::first-letter {
+    color: red;
+    font-size: 30px;
+}
+
+.lorem::first-line {
+    color: blue;
+}
+.lorem::selection {
+    background-color: aqua;
+}
+
+/* 선택자 결합 
+    하위, 자식, 형제 선택자, 그룹화*/
+
+/* 하위 선택자 결합 */
+ul li:last-of-type{
+    color: red;
+}  
+
+ol li:last-of-type{
+    color: blue;
+}
+
+#list li:last-of-type{
+
+}
+
+/* 자식 선택자 결합 
+    자식중에 바로 아래 하위 자식만 찾게된다.*/
+#list > li:last-of-type {
+    color : blueviolet;
+}
+
+/* 형제 선택자 결합 */
+
+/*1. 일반 형제 선택자 결합 (~) 
+    같은부모를가진 형제를 선택을 한다. 형제중에 자기 뒤에 있는 형제만 선택할수있다.
+    같은라인이면서 특정요소 뒤에 있을때 유용하게 사용한다.*/
+
+code ~ p {
+    color: red;
+}
+
+code ~ .red {
+    
+}
+
+/* 2. 인접 형제 선택자 결합 (+)
+    말그대로 인접한 형제들끼리만 변경 되는 것. 뒤에있는 붙어있는 애만 적용
+    */
+
+code + p {
+    color: skyblue;
+}
+
+.red + p {
+    color : slateblue;
+}
+
+/* 그룹화 
+    동일한 스타일을 묶고 싶을 때 */
+
+span,code {
+    color: red;
+}

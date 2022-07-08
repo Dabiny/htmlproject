@@ -1,0 +1,79 @@
+/* pseudo-class selector
+    (가상 클레스 선택자)
+    :not()
+
+*/
+
+/* selector:not(selector) {
+    /* 콜론 앞에 있는 셀렉터들을 찾되 콜론뒤에있는 (셀렉터)를
+        제외한 나머지를 적용 */
+
+
+/* input:not(.ps){
+    background-color: aquamarine;
+} class 요소는 . */
+
+/* 
+input:not([type=password]) {
+    background-color: blueviolet;
+} type 요소 설정 */
+
+/* 여러개의 요소가 있는데 몇개의 요소만 스타일을 적용하고싶지 않을때사용 */
+
+
+/* link, visited 동적요소 
+    하이퍼 링크를 통해서 만들수 있는
+    a링크는 방문하기전, 후 상태로 나뉘게된다. 방문기록 기준*/
+
+a:link {
+    color: tomato;
+} 
+/* 방문하기전 색깔 그냥 a로 하면 방문하고 나서도 색깔이 안바뀜*/
+
+a:visited {
+    color: yellowgreen;
+}
+/* 방문하고 난 다음 색깔바꾸기 */
+
+
+/* 동적 가상클래스 선택자 
+    hover, active, focus */
+/* 버튼, 메뉴 등에 마우스를 올리거나 동작할때마다 변하는 요소 */
+
+/* input[type=button]{
+    background-color: cadetblue;
+} */
+
+/* 마우스를 올렸을 때 */
+input[type=button]:hover{
+    background-color: cadetblue;
+    color: white;
+}
+
+/* 눌럿따가 뗴기전까지 상태 */
+input[type=button]:active {
+    background-color: blue;
+}
+/* LVHA 순서로 (:link - :visited - :hover - :active) 순을 따라 배치 */
+
+/* 요소가 포커싱 될때 탭키를 사용했을때 클릭을해서 인풋할때*/
+input[type=text]:focus {
+    background-color: green;
+}
+
+/* 가상클래스 선택자 - enabled, disabled, cheaked */
+input[type=text]:enabled {
+    background-color: darkcyan;
+}
+
+input[type=text]:disabled {
+    background-color: beige;
+}
+
+input[type=radio]:checked {
+    outline: 3px solid purple;
+}
+
+input[type=checkbox]:checked{
+    outline: 3px solid blue;
+}
